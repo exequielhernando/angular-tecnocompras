@@ -9,8 +9,12 @@
         </tr>  
     </thead>
     <tbody>
-        <tr>
-            
+        <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}">
+            <td><img [src]="product.image" [alt]="product.image"></td>
+            <td>{{product.name}}</td>
+            <td>{{product.type}}</td>
+            <td>{{product.price}}</td>
+            <td><span class="badge badge-warning" *ngIf="product.stock == 0" >SIN STOCK</span></td>
         </tr>
     </tbody>
 </table>
