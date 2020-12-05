@@ -15,43 +15,62 @@ export class ProductListComponent implements OnInit {
       type: 'asd',
       price: 152,
       stock: 15,
-      image:'',
+      image:'../../assets/producto.jpg',
       clearance: false,
+      quantity: 0,
     },
     {
       name: 'asd',
       type: 'asd',
       price: 152,
       stock: 15,
-      image:'',
+      image:'../../assets/producto.jpg',
       clearance: true,
+      quantity: 0,
     },
     {
       name: 'asd',
       type: 'asd',
       price: 152,
       stock: 0,
-      image:'',
+      image:'../../assets/producto.jpg',
       clearance: false,
+      quantity: 0,
     },
     {
       name: 'asd',
       type: 'asd',
       price: 152,
       stock: 15,
-      image:'',
+      image:'../../assets/producto.jpg',
       clearance: false,
+      quantity: 0,
     },
     {
       name: 'asd',
       type: 'asd',
       price: 152,
       stock: 15,
-      image:'',
+      image:'../../assets/producto.jpg',
       clearance: false,
+      quantity: 0,
     }
   ]
   ngOnInit(): void {
   }
-
+  upQuantity(product: Product): void{
+    if(product.quantity < product.stock)
+      product.quantity++;
+  }
+  downQuantity(product: Product): void{
+    if(product.quantity > 0)
+      product.quantity--;
+  }
+  onChangeQuantity(event, product: Product): void{
+    if(event.key == Number){
+      if(event.key < product.stock){
+        
+      }
+    }
+  }
 }
